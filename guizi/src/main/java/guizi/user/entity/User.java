@@ -3,7 +3,7 @@ package guizi.user.entity;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Indexed;
 
-import commons.db.BaseEntity;
+import commons.entity.BaseEntity;
 
 @Entity(noClassnameStored=true)
 public class User extends BaseEntity{

@@ -3,9 +3,15 @@
 import org.junit.Test;
 
 import guizi.user.dao.UserDao;
+import guizi.user.dao.UserDao2;
 import guizi.user.entity.User;
 
 public class TestMongodb{
+	
+	@Test
+	public void test20161219() {
+		UserDao2 userDao = new UserDao2();
+	}
 
 	@Test
 	public void test() {
