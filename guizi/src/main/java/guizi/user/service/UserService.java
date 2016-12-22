@@ -17,11 +17,19 @@ public class UserService {
 		return userDao.get(id);
 	}
 	
+	public void save(User user) {
+		userDao.save(user);
+	}
+	
 	public User getUserByName(String name) {
 		return userDao.get("name", name);
 	}
 	
 	public User getUserByProperties(Map<String,Object> map) {
 		return userDao.get(map);
+	}
+	
+	public User getUserByProperty(String key,Object value) {
+		return userDao.get(key, value);
 	}
 }

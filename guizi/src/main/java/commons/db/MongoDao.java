@@ -38,6 +38,10 @@ public class MongoDao<T, K extends Serializable> {
 		return (T) morphiaDao.get(id);
 	}
 	
+	public void save(T t) {
+		morphiaDao.save(t);
+	}
+	
 	public T get(String key,Object value) {
 		return createQuery().field(key).equal(value).get();
 	}
