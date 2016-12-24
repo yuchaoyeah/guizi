@@ -88,4 +88,8 @@ public class Msg {
 	public void setData(Object data) {
 		this.data = data;
 	}
+	
+	public String toString() {
+		return "suc: "+suc+" ,code: "+code+" ,desc: "+desc;
+	}
 }

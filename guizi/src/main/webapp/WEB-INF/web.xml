@@ -11,12 +11,12 @@
 	</context-param>
 	
 	<filter>
-		<filter-name>login</filter-name>
-		<filter-class>guizi.core.filter.AppFilter</filter-class>
+		<filter-name>userfilter</filter-name>
+		<filter-class>guizi.core.web.AppFilter</filter-class>
 	</filter>
 	<filter-mapping>
-		<filter-name>login</filter-name>
-		<url-pattern>/</url-pattern>
+		<filter-name>userfilter</filter-name>
+		<url-pattern>/user/*</url-pattern>
 	</filter-mapping>
 	
 	<listener>

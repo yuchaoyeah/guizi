@@ -26,12 +26,19 @@ public class UserOpController {
 	@RequestMapping(value="/register",method=RequestMethod.POST)
 	@ResponseBody
 	public Msg register(String username,String password,HttpServletRequest req) {
+		System.out.println("register...");
 		if(StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
 			return Msg.createFailMsg("用户名或者密码不能为空！");
 		}
+		User user = userSer.getUserByProperty("account", username);
+		if(user != null) {
+			return Msg.createFailMsg("该用户名已被注册！");
+		}
 		//用户名、密码字符限制...
 		
-		User user = new User(username.trim(),MathUtils.MD5(password.trim()));
+		user = new User();
+		user.setAccount(username.trim());
+		user.setPassword(MathUtils.MD5(password.trim()));
 		userSer.save(user);
 		return Msg.createScuMsg();
 	}

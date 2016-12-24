@@ -21,11 +21,6 @@ public class User extends BaseEntity{
 	private int comments;
 	private Date lastLogin;
 	
-	public User(String account,String password) {
-		this.account = account;
-		this.password = password;
-	}
-	
 	public String getAccount() {
 		return account;
 	}
