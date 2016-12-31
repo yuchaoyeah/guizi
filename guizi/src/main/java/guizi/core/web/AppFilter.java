@@ -25,7 +25,9 @@ public class AppFilter implements Filter{
 	public void init(FilterConfig filterConfig) throws ServletException {
 		// TODO Auto-generated method stub
 		exclude = new ArrayList<String>();
+		exclude.add("/guizi/user/toLogin.do");
 		exclude.add("/guizi/user/login.do");
+		exclude.add("/guizi/user/toRegister.do");
 		exclude.add("/guizi/user/register.do");
 	}
 

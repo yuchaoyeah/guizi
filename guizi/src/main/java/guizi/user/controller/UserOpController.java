@@ -23,6 +23,12 @@ public class UserOpController {
 	@Autowired
 	private UserService userSer;
 	
+	@RequestMapping("/toRegister")
+	public String toRegister() {
+		System.out.println("home...");
+		return "register";
+	}
+	
 	@RequestMapping(value="/register",method=RequestMethod.POST)
 	@ResponseBody
 	public Msg register(String username,String password,HttpServletRequest req) {
@@ -41,6 +47,11 @@ public class UserOpController {
 		user.setPassword(MathUtils.MD5(password.trim()));
 		userSer.save(user);
 		return Msg.createScuMsg();
+	}
+	
+	@RequestMapping("/toLogin")
+	public String toLogin() {
+		return "login";
 	}
 	
 	@RequestMapping(value="/login",method=RequestMethod.POST)
