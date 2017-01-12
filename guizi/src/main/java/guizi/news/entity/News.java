@@ -10,6 +10,7 @@ import commons.entity.BaseEntity;
 @Entity(noClassnameStored=true)
 public class News extends BaseEntity{
 	private String title;
+	private String desc;
 	private String author;
 	private String url;
 	private String cateId;
@@ -68,5 +69,11 @@ public class News extends BaseEntity{
 	}
 	public void setComments(int comments) {
 		this.comments = comments;
+	}
+	public String getDesc() {
+		return desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 }

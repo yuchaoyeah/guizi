@@ -1,15 +1,19 @@
 package guizi.news.entity;
 
+import guizi.news.enums.Device;
+
 import java.util.Date;
+import java.util.List;
 
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Indexed;
+import org.mongodb.morphia.annotations.Transient;
 
 import commons.entity.BaseEntity;
-import guizi.news.enums.Device;
 
 @Entity
 public class Comments extends BaseEntity{
+	@Indexed
 	private String newsId;
 	private String userId;
 	private String name;//冗余字段--评论者名称
@@ -22,6 +26,9 @@ public class Comments extends BaseEntity{
 	
 	private String ccommentId;//评论的评论的Id
 	private Device device;
+	
+	@Transient
+	private List<Comments> childs;
 	
 	public String getNewsId() {
 		return newsId;
@@ -82,5 +89,11 @@ public class Comments extends BaseEntity{
 	}
 	public void setDevice(Device device) {
 		this.device = device;
+	}
+	public List<Comments> getChilds() {
+		return childs;
+	}
+	public void setChilds(List<Comments> childs) {
+		this.childs = childs;
 	}
 }
